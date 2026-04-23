@@ -68,6 +68,8 @@ export default defineConfig({
           items: [
             { text: 'Edge Types', link: '/examples/edge-types' },
             { text: 'Edge Markers', link: '/examples/edge-markers' },
+            { text: 'Floating Edges', link: '/examples/floating-edges' },
+            { text: 'Editable Edge', link: '/examples/editable-edge' },
           ],
         },
         {
@@ -78,11 +80,15 @@ export default defineConfig({
             { text: 'Context Menu', link: '/examples/context-menu' },
             { text: 'Connection Limit', link: '/examples/connection-limit' },
             { text: 'Preventing Cycles', link: '/examples/cycles' },
+            { text: 'Undo / Redo', link: '/examples/undo-redo' },
           ],
         },
         {
           text: 'Layout',
-          items: [{ text: 'Horizontal Flow', link: '/examples/horizontal' }],
+          items: [
+            { text: 'Horizontal Flow', link: '/examples/horizontal' },
+            { text: 'Dagre Tree', link: '/examples/dagre' },
+          ],
         },
         {
           text: 'Styling',

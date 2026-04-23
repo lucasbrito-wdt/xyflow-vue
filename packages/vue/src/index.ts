@@ -51,6 +51,7 @@ export { useColorMode } from './composables/useColorMode';
 export { useOnSelectionChange } from './composables/useOnSelectionChange';
 export { useKeyboardShortcuts } from './composables/useKeyboardShortcuts';
 export { useSelectionBox } from './composables/useSelectionBox';
+export { useUndoRedo, type UseUndoRedoOptions, type UseUndoRedoReturn } from './composables/useUndoRedo';
 
 // utils
 export { applyNodeChanges, applyEdgeChanges } from './utils/changes';

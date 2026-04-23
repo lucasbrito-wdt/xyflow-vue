@@ -20,6 +20,10 @@ import DarkMode from './examples/DarkMode.vue';
 import ConnectionLimit from './examples/ConnectionLimit.vue';
 import PreventingCycles from './examples/PreventingCycles.vue';
 import StressTest from './examples/StressTest.vue';
+import UndoRedoDemo from './examples/UndoRedoDemo.vue';
+import DagreLayout from './examples/DagreLayout.vue';
+import FloatingEdges from './examples/FloatingEdges.vue';
+import EditableEdgeDemo from './examples/EditableEdgeDemo.vue';
 
 const groups = {
   Basics: {
@@ -40,6 +44,8 @@ const groups = {
   Edges: {
     types: { label: 'Edge Types', comp: markRaw(EdgeTypes) },
     markers: { label: 'Edge Markers', comp: markRaw(EdgeMarkers) },
+    floating: { label: 'Floating Edges', comp: markRaw(FloatingEdges) },
+    editable: { label: 'Editable Edge', comp: markRaw(EditableEdgeDemo) },
   },
   Interaction: {
     validation: { label: 'Validation', comp: markRaw(Validation) },
@@ -47,9 +53,11 @@ const groups = {
     ctxMenu: { label: 'Context Menu', comp: markRaw(ContextMenu) },
     limit: { label: 'Connection Limit', comp: markRaw(ConnectionLimit) },
     cycles: { label: 'Preventing Cycles', comp: markRaw(PreventingCycles) },
+    undoRedo: { label: 'Undo / Redo', comp: markRaw(UndoRedoDemo) },
   },
   Layout: {
     horizontal: { label: 'Horizontal Flow', comp: markRaw(HorizontalFlow) },
+    dagre: { label: 'Dagre Tree', comp: markRaw(DagreLayout) },
   },
   Styling: {
     dark: { label: 'Dark Mode', comp: markRaw(DarkMode) },
