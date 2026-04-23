@@ -55,7 +55,14 @@ export function useUndoRedo<
   let timer: ReturnType<typeof setTimeout> | null = null;
 
   const cloneCurrent = (): Snapshot<NodeType, EdgeType> => ({
-    nodes: (store.nodes.value as NodeType[]).map((n: any) => ({ ...n })),
+    // Merge measured dims from the internal node so adoptUserNodes can
+    // preserve handleBounds when we re-apply this snapshot. Without this,
+    // restoring an initial-state snapshot (user nodes had no `measured`)
+    // resets isNodeInitialized to false and edges stop rendering.
+    nodes: (store.nodes.value as NodeType[]).map((n: any) => {
+      const internal = store.nodeLookup.get(n.id);
+      return { ...n, measured: internal?.measured ?? n.measured };
+    }),
     edges: (store.edges.value as EdgeType[]).map((e: any) => ({ ...e })),
   });
 
