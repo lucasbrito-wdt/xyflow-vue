@@ -2,114 +2,113 @@
 
 Parity target: [reactflow.dev/examples](https://reactflow.dev/examples) — ~70 examples.
 
-**Shipped: 20** (in `examples/vue/src/examples/`)
-**Remaining: 55**
+**Shipped: 24** · **Remaining: ~46**
+
+Live demos: `pnpm dev` → http://localhost:5173. Docs pages with live iframe: `pnpm docs:dev` → http://localhost:5174/examples/.
 
 ---
 
-## Nodes (remaining: 10)
+## Nodes
 
-| Example | Complexity | Notes |
+| Example | Status | Notes |
 |---|---|---|
-| Add Node On Edge Drop | ✅ shipped | — |
-| Connection Limit | ✅ shipped | — |
-| Custom Nodes | ✅ shipped | — |
-| Delete Middle Node | ✅ shipped | — |
-| Drag Handle | S | `node.dragHandle` selector — 30 min |
-| Easy Connect | S | full-node Handle overlay — 45 min |
-| Intersections | M | `getNodesBounds` + AABB collision — 1-2h |
-| Node Resizer | ✅ shipped | — |
-| Node Toolbar | ✅ shipped | — |
-| Proximity Connect | M | distance calc on drag + auto edge — 2h |
-| Rotatable Node | S | CSS transform + custom resizer — 1h |
-| Node Position Animation | M | spring animation via @vueuse/motion — 2h |
-| Stress Test | ✅ shipped | — |
-| Updating Nodes | ✅ shipped | — |
-| Shapes | S | 5-6 custom nodes with SVG shapes — 1h |
+| Add Node On Edge Drop | ✅ | `/examples/add-on-drop` |
+| Connection Limit | ✅ | `/examples/connection-limit` — uses `useNodeConnections` |
+| Custom Nodes | ✅ | `/examples/custom` |
+| Delete Middle Node | ✅ | `/examples/delete-middle` |
+| Node Resizer | ✅ | `/examples/node-resizer` |
+| Node Toolbar | ✅ | `/examples/node-toolbar` |
+| Stress Test | ✅ | `/examples/stress` — 500 nodes |
+| Updating Nodes | ✅ | `/examples/updating` |
+| Drag Handle | ⏳ S | `node.dragHandle` selector — 30 min |
+| Easy Connect | ⏳ S | full-node Handle overlay — 45 min |
+| Intersections | ⏳ M | `getNodesBounds` + AABB — 1-2h |
+| Proximity Connect | ⏳ M | distance + auto-edge on drag — 2h |
+| Rotatable Node | ⏳ S | CSS transform + custom resizer — 1h |
+| Node Position Animation | ⏳ M | spring via @vueuse/motion — 2h |
+| Shapes | ⏳ S | 5-6 SVG custom node shapes — 1h |
 
-## Edges (remaining: 13)
+## Edges
 
-| Example | Complexity | Notes |
+| Example | Status | Notes |
 |---|---|---|
-| Animating Edges | S | CSS `stroke-dasharray` animation — 30 min |
-| Connection Line | S | `<ConnectionLine>` customization — 30 min |
-| Custom Edges | S | already covered in `custom-edges` docs — 30 min |
-| Delete Edge on Drop | M | edge reconnect flow integration — 2h |
-| Edge Label Renderer | S | `<EdgeLabel>` usage — 30 min |
-| Edge Intersection | M | AABB on drag — 2h |
-| Edge Toolbar | S | `<EdgeToolbar>` — 30 min |
-| Edge Types | ✅ shipped | — |
-| Floating Edges | M | custom edge with dynamic handle positions — 2-3h |
-| Edge Markers | ✅ shipped | — |
-| Multi Connection Line | L | multi-selection connect — 3-4h |
-| Reconnect Edge | M | `<EdgeReconnectAnchor>` live wiring — 2h |
-| Simple Floating Edges | M | simplified floating — 1-2h |
-| Temporary Edges | M | ghost nodes + cleanup — 2-3h |
-| Editable Edge | L | draggable control points — 4-6h |
+| Edge Types | ✅ | `/examples/edge-types` |
+| Edge Markers | ✅ | `/examples/edge-markers` |
+| Floating Edges | ✅ | `/examples/floating-edges` |
+| Editable Edge | ✅ | `/examples/editable-edge` — draggable control points |
+| Animating Edges | ⏳ S | CSS `stroke-dasharray` — 30 min |
+| Connection Line | ⏳ S | `<ConnectionLine>` customization — 30 min |
+| Custom Edges | ⏳ S | covered in `/guide/custom-edges` — formal example: 30 min |
+| Delete Edge on Drop | ⏳ M | edge reconnect + cleanup — 2h |
+| Edge Label Renderer | ⏳ S | `<EdgeLabel>` usage — 30 min |
+| Edge Intersection | ⏳ M | AABB during drag — 2h |
+| Edge Toolbar | ⏳ S | `<EdgeToolbar>` — 30 min |
+| Multi Connection Line | ⏳ L | multi-select connect — 3-4h |
+| Reconnect Edge | ⏳ M | `<EdgeReconnectAnchor>` live wiring — 2h |
+| Simple Floating Edges | ⏳ M | simplified float — 1-2h |
+| Temporary Edges | ⏳ M | ghost nodes + cleanup — 2-3h |
 
-## Interaction (remaining: 10)
+## Interaction
 
-| Example | Complexity | Notes |
+| Example | Status | Notes |
 |---|---|---|
-| Computing Flows | M | topological eval — 2-3h |
-| Connection Events | ✅ covered by EventsLog | — |
-| Context Menu | ✅ shipped | — |
-| Contextual Zoom | S | `useViewport` + conditional rendering — 1h |
-| Drag and Drop | ✅ shipped | — |
-| Preventing Cycles | ✅ shipped | — |
-| Save and Restore | ✅ shipped | — |
-| Touch Device | S | handle size overrides + tap-to-connect — 1-2h |
-| Validation | ✅ shipped | — |
-| Helper Lines | L | guide lines + snapping — 4-6h |
-| Collaborative | XL | yjs + y-webrtc — 1-2 days |
-| Copy and Paste | ✅ built into keyboard | — |
-| Undo and Redo | M | command stack via pinia or @vueuse/useUndo — 3-4h |
+| Context Menu | ✅ | `/examples/context-menu` |
+| Drag and Drop | ✅ | `/examples/dnd` |
+| Preventing Cycles | ✅ | `/examples/cycles` — DFS |
+| Save and Restore | ✅ | `/examples/save-restore` — `toObject()` + localStorage |
+| Undo and Redo | ✅ | `/examples/undo-redo` — `useUndoRedo` composable |
+| Validation | ✅ | `/examples/validation` — `isValidConnection` |
+| Connection Events | ✅ | covered by Events Log (`/examples/events`) |
+| Copy and Paste | ✅ | built into `useKeyboardShortcuts` (Ctrl+C/X/V) |
+| Computing Flows | ⏳ M | topological evaluation — 2-3h |
+| Contextual Zoom | ⏳ S | `useViewport` + conditional render — 1h |
+| Touch Device | ⏳ S | handle size + tap-to-connect — 1-2h |
+| Helper Lines | ⏳ L | snap guides — 4-6h |
+| Collaborative | ⏳ XL | yjs + y-webrtc — 1-2d |
 
-## Subflows & Grouping (remaining: 2)
+## Subflows & Grouping
 
-| Example | Complexity | Notes |
+| Example | Status | Notes |
 |---|---|---|
-| Selection Grouping | M | dynamic group creation from selection — 2-3h |
-| Parent Child Relation | M | drag in/out of parent + expandParent — 3-4h |
-| Sub Flow | ✅ shipped | — |
+| Sub Flow | ✅ | `/examples/subflow` |
+| Selection Grouping | ⏳ M | dynamic group from selection — 2-3h |
+| Parent Child Relation | ⏳ M | drag in/out of parent + expandParent — 3-4h |
 
-## Layout (remaining: 8)
+## Layout
 
-All of these need external layout libraries. Scaffold them as dedicated examples once we decide on deps.
+| Example | Status | Lib | Notes |
+|---|---|---|---|
+| Horizontal Flow | ✅ | — | `/examples/horizontal` |
+| Dagre Tree | ✅ | `@dagrejs/dagre` | `/examples/dagre` — TB/LR toggle |
+| Elkjs Tree | ⏳ M | `elkjs` | same pattern as dagre |
+| Elkjs Multiple Handles | ⏳ M | `elkjs` | |
+| Expand and Collapse | ⏳ M | `@dagrejs/dagre` | |
+| Auto Layout | ⏳ M | dagre/d3-hierarchy/elkjs | showcase multiple engines |
+| Force Layout | ⏳ M | `d3-force` | |
+| Dynamic Layouting | ⏳ L | `elkjs` | placeholder-driven self-organizing graph |
+| Node Collisions | ⏳ M | `d3-force` | |
 
-| Example | Library | Install |
+## Styling
+
+| Example | Status | Notes |
 |---|---|---|
-| Dagre Tree | `@dagrejs/dagre` | `pnpm add @dagrejs/dagre` |
-| Elkjs Tree | `elkjs` | `pnpm add elkjs` |
-| Elkjs Multiple Handles | `elkjs` | — |
-| Horizontal Flow | ✅ shipped | — |
-| Expand and Collapse | `@dagrejs/dagre` | — |
-| Auto Layout | `@dagrejs/dagre` or `d3-hierarchy` | — |
-| Force Layout | `d3-force` | `pnpm add d3-force` |
-| Dynamic Layouting | `elkjs` | — |
-| Node Collisions | `d3-force` | — |
+| Dark Mode | ✅ | `/examples/dark` — light/dark/system |
+| Base Style | ⏳ S | import `base.css` — 10 min |
+| Tailwind | ⏳ S | Tailwind CDN + theme — 1h |
+| Turbo Flow | ⏳ M | gradient border animation — 2-3h |
 
-## Styling (remaining: 3)
+## Whiteboard
 
-| Example | Complexity | Notes |
-|---|---|---|
-| Base Style | S | just import `base.css` — 10 min |
-| Dark Mode | ✅ shipped | — |
-| Tailwind | S | Tailwind CDN + tailwind theme — 1h |
-| Turbo Flow | M | fancy gradient border animation — 2-3h |
-
-## Whiteboard (remaining: 4)
-
-Big feature — each is essentially a new mode on top of VueFlow. Probably warrants its own `xyflow-vue-whiteboard` package.
+Large surface area. Probably belongs in a future `xyflow-vue-whiteboard` sibling package.
 
 | Example | Complexity |
 |---|---|
-| Eraser Tool | L (~1 day) |
-| Lasso Selection | M (~3-4h) |
-| Rectangle drawing | M |
-| Freehand Draw | L |
+| Eraser Tool | ⏳ L (~1d) |
+| Lasso Selection | ⏳ M (~3-4h) |
+| Rectangle drawing | ⏳ M |
+| Freehand Draw | ⏳ L |
 
-## Misc (remaining: 2)
+## Misc
 
 | Example | External dep |
 |---|---|
@@ -118,17 +117,26 @@ Big feature — each is essentially a new mode on top of VueFlow. Probably warra
 
 ---
 
-## Priority for next batch
+## Other deferred work (not examples)
 
-If resuming, tackle in this order (highest value-to-effort):
+- **Playwright E2E tests** — port `tests/playwright` fixtures from svelte-flow. ~2-3d. High ROI for CI confidence.
+- **Reconnect UX polish** — `<EdgeReconnectAnchor>` shell exists; wire the live pointerdown→XYHandle reconnect flow. ~1d.
+- **Nuxt module** — `@xyflow/nuxt` wrapper with auto-imports + SSR defaults. ~1d.
+- **Tree-shake audit** — verify unused plugins (MiniMap, NodeResizer) actually get dropped in a real app bundle. ~2h.
 
-1. **Drag Handle** (S) — common real-world need
-2. **Edge Label Renderer** (S) — missing UI building block
-3. **Connection Line** (S) — completes connect experience
-4. **Animating Edges** (S) — cheap visual polish
-5. **Edge Toolbar** (S) — matches NodeToolbar parity
-6. **Tailwind** (S) — most-requested integration
-7. **Floating Edges** (M) — frequently requested pattern
-8. **Computing Flows** (M) — showcases reactive power
-9. **Dagre Tree** (M) — top layout integration
-10. **Undo and Redo** (M) — common editor feature
+---
+
+## Suggested next batch (high value / low effort)
+
+Ordered by ROI for typical users:
+
+1. **Edge Label Renderer** (S) — missing UI primitive, used constantly
+2. **Edge Toolbar** (S) — rounds out the toolbar story next to NodeToolbar
+3. **Drag Handle** (S) — common feature request, trivial via `node.dragHandle`
+4. **Connection Line** (S) — custom preview line during drag
+5. **Animating Edges** (S) — cheap visual polish, ~5 lines of CSS
+6. **Reconnect Edge** (M) — user-facing feature parity gap
+7. **Tailwind** (S) — highest-asked integration
+8. **Elkjs Tree** (M) — Dagre alternative with richer constraints
+9. **Helper Lines** (L) — frequent ask from design-tool users
+10. **Playwright tests** (XL) — unblocks contributions & refactors
