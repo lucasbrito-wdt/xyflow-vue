@@ -12,9 +12,11 @@ export default defineConfig({
       fileName: () => 'index.js',
     },
     rollupOptions: {
-      external: ['vue', '@xyflow/system'],
+      // Only Vue stays external — @xyflow/system is bundled into the dist so
+      // users get zero-config installs (pnpm add xyflow-vue and nothing else).
+      external: ['vue'],
       output: {
-        globals: { vue: 'Vue', '@xyflow/system': 'XYFlowSystem' },
+        globals: { vue: 'Vue' },
       },
     },
     sourcemap: true,
