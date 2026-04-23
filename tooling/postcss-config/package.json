@@ -1,0 +1,16 @@
+{
+  "name": "@xyflow-vue/postcss-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "postcss.config.js",
+  "dependencies": {
+    "autoprefixer": "^10.4.22",
+    "cssnano": "^7.1.2",
+    "dotenv": "^17.2.3",
+    "postcss": "^8.5.6",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-import": "^16.1.1",
+    "postcss-nested": "^7.0.2",
+    "postcss-rename": "^0.8.0"
+  }
+}
