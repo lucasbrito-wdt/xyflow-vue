@@ -84,6 +84,28 @@ store.onConnectStart.value = (ev: any, p: any) => emit('connectStart', ev, p);
 store.onConnectEnd.value = (ev: any) => emit('connectEnd', ev);
 store.onError.value = (code: string, message: string) => emit('error', code, message);
 
+// wire function-typed props into the store so Handle + flow see them
+watch(
+  () => props.isValidConnection,
+  (fn) => { store.isValidConnection.value = fn; },
+  { immediate: true }
+);
+watch(
+  () => (props as any).onBeforeConnect,
+  (fn: any) => { store.onBeforeConnect.value = fn; },
+  { immediate: true }
+);
+watch(
+  () => (props as any).onBeforeDelete,
+  (fn: any) => { store.onBeforeDelete.value = fn; },
+  { immediate: true }
+);
+watch(
+  () => (props as any).onDelete,
+  (fn: any) => { store.onDelete.value = fn; },
+  { immediate: true }
+);
+
 // node drag wiring — expose emits via store for useDrag to read
 (store as any)._emitNodeDrag = (kind: 'start' | 'drag' | 'stop', event: MouseEvent, node: NodeType, nodes: NodeType[]) => {
   if (kind === 'start') emit('nodeDragStart', event, node, nodes);
