@@ -2,11 +2,13 @@
 import { computed } from 'vue';
 import { BaseEdge, getBezierPath, Position, useInternalNode } from 'xyflow-vue';
 
+defineOptions({ inheritAttrs: false });
+
 const props = defineProps<{
   id: string;
   source: string;
   target: string;
-  markerEnd?: string;
+  markerEnd?: string | Record<string, unknown>;
   style?: Record<string, string | number>;
 }>();
 

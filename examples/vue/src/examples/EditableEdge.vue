@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue';
 import { BaseEdge, useVueFlow } from 'xyflow-vue';
 
+defineOptions({ inheritAttrs: false });
+
 type ControlPoint = { x: number; y: number };
 
 const props = defineProps<{
