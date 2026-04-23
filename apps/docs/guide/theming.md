@@ -3,9 +3,9 @@
 ## Styles import
 
 ```ts
-import '@xyflow/vue/dist/style.css'; // default, ready to use
+import 'xyflow-vue/dist/style.css'; // default, ready to use
 // OR
-import '@xyflow/vue/dist/base.css';  // minimal, style everything yourself
+import 'xyflow-vue/dist/base.css';  // minimal, style everything yourself
 ```
 
 All class names use the `.vue-flow__` prefix. Example:

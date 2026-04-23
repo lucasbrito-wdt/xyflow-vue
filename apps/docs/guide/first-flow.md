@@ -15,7 +15,7 @@ Let's build a small editable flow with save/load and custom nodes.
 In controlled mode, wire the changes:
 
 ```ts
-import { applyNodeChanges, applyEdgeChanges } from '@xyflow/vue';
+import { applyNodeChanges, applyEdgeChanges } from 'xyflow-vue';
 
 function onNodesChange(changes) { nodes.value = applyNodeChanges(changes, nodes.value); }
 function onEdgesChange(changes) { edges.value = applyEdgeChanges(changes, edges.value); }
@@ -46,14 +46,14 @@ All plugins are **slot children** of `<VueFlow>` — they have access to the sto
 Or use the helper:
 
 ```ts
-import { addEdge } from '@xyflow/vue';
+import { addEdge } from 'xyflow-vue';
 function onConnect(c) { edges.value = addEdge(c, edges.value); }
 ```
 
 ## 4 — Save & restore
 
 ```ts
-import { useVueFlow } from '@xyflow/vue';
+import { useVueFlow } from 'xyflow-vue';
 const flow = useVueFlow();
 
 function save() { localStorage.setItem('flow', JSON.stringify(flow.toObject())); }

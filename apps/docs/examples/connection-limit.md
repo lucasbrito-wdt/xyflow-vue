@@ -8,7 +8,7 @@ Limit how many edges a handle accepts. Use `useNodeConnections` inside the custo
 <!-- LimitedNode.vue -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Handle, Position, useNodeConnections } from '@xyflow/vue';
+import { Handle, Position, useNodeConnections } from 'xyflow-vue';
 
 defineProps<{ id: string; data: { label: string } }>();
 

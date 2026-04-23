@@ -5,7 +5,7 @@ Reject connections that would introduce a cycle. Use DFS from the target back to
 <ExampleFrame slug="cycles" />
 
 ```ts
-import { getOutgoers, type Connection } from '@xyflow/vue';
+import { getOutgoers, type Connection } from 'xyflow-vue';
 
 const isValidConnection = (c: Connection) => {
   if (c.source === c.target) return false;

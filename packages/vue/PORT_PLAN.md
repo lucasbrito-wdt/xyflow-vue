@@ -1,4 +1,4 @@
-# @xyflow/vue — Port Plan
+# xyflow-vue — Port Plan
 
 Este documento mapeia **cada arquivo do `@xyflow/svelte` para seu equivalente Vue**, com status. A referência é `packages/svelte` porque é o port mais próximo filosoficamente de Vue (reatividade fina, stores, actions/directives).
 

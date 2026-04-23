@@ -5,7 +5,7 @@ Add arrowheads or custom SVG markers to edge start/end points. Use the `MarkerTy
 <ExampleFrame slug="markers" />
 
 ```ts
-import { MarkerType } from '@xyflow/vue';
+import { MarkerType } from 'xyflow-vue';
 
 const edges = [
   { id: 'a', source: '1', target: '2',

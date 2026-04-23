@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, markRaw } from 'vue';
-import { VueFlow, Background, type Node, type Edge, type Connection } from '@xyflow/vue';
+import { VueFlow, Background, type Node, type Edge, type Connection } from 'xyflow-vue';
 import LimitedNode from './LimitedNode.vue';
 
 const nodeTypes = { limited: markRaw(LimitedNode) };

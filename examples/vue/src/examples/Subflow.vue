@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, Controls, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, type Node, type Edge } from 'xyflow-vue';
 
 // A parent "group" node containing two child nodes with `extent: 'parent'`.
 // The system will clamp child positions inside the group during drag.

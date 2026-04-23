@@ -1,6 +1,6 @@
 # Examples
 
-Live, interactive demos of `@xyflow/vue` features. Each page embeds the running example and shows the source code — you can copy/paste and adapt.
+Live, interactive demos of `xyflow-vue` features. Each page embeds the running example and shows the source code — you can copy/paste and adapt.
 
 > **Run locally:** `pnpm --filter vue-examples dev` — open the `?demo=<slug>` URL shown on each page.
 

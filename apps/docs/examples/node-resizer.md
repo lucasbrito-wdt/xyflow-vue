@@ -7,7 +7,7 @@ Drag the corners or edges of a node to resize. Backed by `XYResizer` from `@xyfl
 ```vue
 <!-- ResizableNode.vue -->
 <script setup lang="ts">
-import { Handle, Position, NodeResizer } from '@xyflow/vue';
+import { Handle, Position, NodeResizer } from 'xyflow-vue';
 defineProps<{ data: { label: string }; selected?: boolean }>();
 </script>
 

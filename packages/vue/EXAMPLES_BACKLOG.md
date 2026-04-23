@@ -100,7 +100,7 @@ All of these need external layout libraries. Scaffold them as dedicated examples
 
 ## Whiteboard (remaining: 4)
 
-Big feature — each is essentially a new mode on top of VueFlow. Probably warrants its own `@xyflow/vue-whiteboard` package.
+Big feature — each is essentially a new mode on top of VueFlow. Probably warrants its own `xyflow-vue-whiteboard` package.
 
 | Example | Complexity |
 |---|---|

@@ -7,7 +7,7 @@ Drag HTML elements from the sidebar and drop them into the canvas to spawn nodes
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, VueFlowProvider, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, VueFlowProvider, type Node, type Edge } from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: 'start', type: 'input', data: { label: 'Start here' }, position: { x: 50, y: 50 } },

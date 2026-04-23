@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "@xyflow/vue"
+  name: "xyflow-vue"
   text: Node-based UIs for Vue 3
   tagline: Official Vue port of xyflow — the engine behind React Flow and Svelte Flow
   image:

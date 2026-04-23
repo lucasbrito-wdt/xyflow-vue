@@ -1,6 +1,6 @@
 # Introduction
 
-`@xyflow/vue` is the **official Vue 3 port of xyflow** — the shared engine behind [React Flow](https://reactflow.dev) and [Svelte Flow](https://svelteflow.dev). It lets you build node-based editors, workflow builders, diagrams, and flow charts.
+`xyflow-vue` is the **official Vue 3 port of xyflow** — the shared engine behind [React Flow](https://reactflow.dev) and [Svelte Flow](https://svelteflow.dev). It lets you build node-based editors, workflow builders, diagrams, and flow charts.
 
 ## Why Vue Flow?
 

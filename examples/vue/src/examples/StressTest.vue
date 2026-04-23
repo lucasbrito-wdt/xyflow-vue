@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, Controls, MiniMap, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, MiniMap, type Node, type Edge } from 'xyflow-vue';
 
 const COUNT = 500;
 const COLS = 25;

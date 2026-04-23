@@ -1,22 +1,22 @@
-# @xyflow/vue
+# xyflow-vue
 
 > **Vue 3 port of [xyflow](https://xyflow.com)** — the engine behind [React Flow](https://reactflow.dev) and [Svelte Flow](https://svelteflow.dev). Built by Lucas Brito on top of `@xyflow/system`.
 
-[![npm](https://img.shields.io/npm/v/@xyflow/vue?style=flat-square)](https://www.npmjs.com/package/@xyflow/vue)
+[![npm](https://img.shields.io/npm/v/xyflow-vue?style=flat-square)](https://www.npmjs.com/package/xyflow-vue)
 [![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](./LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-green?style=flat-square)](./CONTRIBUTING.md)
 
 Build node-based editors, workflow builders, diagrams, and flow charts in Vue 3. Powered by the same `@xyflow/system` core that runs the React and Svelte ports — identical pan/zoom, drag, handle math, subflows, everything.
 
 ```bash
-pnpm add @xyflow/vue
+pnpm add xyflow-vue
 ```
 
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, type Node, type Edge } from '@xyflow/vue';
-import '@xyflow/vue/dist/style.css';
+import { VueFlow, Background, type Node, type Edge } from 'xyflow-vue';
+import 'xyflow-vue/dist/style.css';
 
 const nodes = ref<Node[]>([
   { id: '1', type: 'input', data: { label: 'Hello' }, position: { x: 250, y: 25 } },
@@ -38,7 +38,7 @@ const edges = ref<Edge[]>([{ id: 'e1-2', source: '1', target: '2' }]);
 
 ## Comparison
 
-| | `@xyflow/vue` (this) | `@vue-flow/core` (Braks) | `@xyflow/react` | `@xyflow/svelte` |
+| | `xyflow-vue` (this) | `@vue-flow/core` (Braks) | `@xyflow/react` | `@xyflow/svelte` |
 |---|---|---|---|---|
 | Core engine | `@xyflow/system` | forked from React Flow v10 | `@xyflow/system` | `@xyflow/system` |
 | Vue version | 3.5+ | 3.0+ | — | — |
@@ -48,7 +48,7 @@ const edges = ref<Edge[]>([{ id: 'e1-2', source: '1', target: '2' }]);
 | SSR-safe | ✅ | ✅ | N/A | ✅ |
 | License | MIT | MIT | MIT | MIT |
 
-`@vue-flow/core` is a respected project, but it diverged from the shared xyflow core years ago and misses v12 features. `@xyflow/vue` is built fresh on `@xyflow/system` so it stays in sync with the React/Svelte ports by default.
+`@vue-flow/core` is a respected project, but it diverged from the shared xyflow core years ago and misses v12 features. `xyflow-vue` is built fresh on `@xyflow/system` so it stays in sync with the React/Svelte ports by default.
 
 ## Features
 
@@ -64,7 +64,7 @@ const edges = ref<Edge[]>([{ id: 'e1-2', source: '1', target: '2' }]);
 ## Repo layout
 
 ```
-packages/vue/       — the @xyflow/vue library (published to npm)
+packages/vue/       — the xyflow-vue library (published to npm)
 examples/vue/       — Vite demo app with 20 interactive examples
 apps/docs/          — VitePress documentation site
 tooling/            — shared postcss config
@@ -74,7 +74,7 @@ tooling/            — shared postcss config
 
 ```bash
 pnpm install                 # install workspace deps
-pnpm build                   # build @xyflow/vue
+pnpm build                   # build xyflow-vue
 pnpm dev                     # run the examples app on :5173
 pnpm docs:dev                # run the docs site on :5174
 pnpm typecheck               # vue-tsc

@@ -1,4 +1,4 @@
-# @xyflow/vue
+# xyflow-vue
 
 > **Status: alpha (0.1.0-alpha.0)** — Vue 3 port of [xyflow](https://xyflow.com). API is stable; behavior matches `@xyflow/svelte` and `@xyflow/react` except where noted in [`PORT_PLAN.md`](./PORT_PLAN.md).
 
@@ -7,9 +7,9 @@ Vue Flow is a highly customizable Vue 3 library for building node-based editors,
 ## Install
 
 ```bash
-pnpm add @xyflow/vue
+pnpm add xyflow-vue
 # or
-npm install @xyflow/vue
+npm install xyflow-vue
 ```
 
 Peer dep: `vue ^3.5.0`.
@@ -19,8 +19,8 @@ Peer dep: `vue ^3.5.0`.
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, Controls, MiniMap, type Node, type Edge } from '@xyflow/vue';
-import '@xyflow/vue/dist/style.css';
+import { VueFlow, Background, Controls, MiniMap, type Node, type Edge } from 'xyflow-vue';
+import 'xyflow-vue/dist/style.css';
 
 const nodes = ref<Node[]>([
   { id: '1', type: 'input', data: { label: 'Input' }, position: { x: 250, y: 25 } },
@@ -55,7 +55,7 @@ function onConnect(c) {
 
 ```vue
 <script setup lang="ts">
-import { Handle, Position } from '@xyflow/vue';
+import { Handle, Position } from 'xyflow-vue';
 
 defineProps<{
   id: string;

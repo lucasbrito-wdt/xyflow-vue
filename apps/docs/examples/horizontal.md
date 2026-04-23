@@ -5,7 +5,7 @@ Left-to-right flow by setting `sourcePosition` to `Right` and `targetPosition` t
 <ExampleFrame slug="horizontal" />
 
 ```ts
-import { Position } from '@xyflow/vue';
+import { Position } from 'xyflow-vue';
 
 const nodes = [
   { id: '1', type: 'input', data: { label: 'Input' }, position: { x: 0, y: 100 },

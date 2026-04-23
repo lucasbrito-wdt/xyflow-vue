@@ -6,7 +6,7 @@ Mutate `data` imperatively from outside the node using `useVueFlow().updateNodeD
 
 ```vue
 <script setup lang="ts">
-import { useVueFlow } from '@xyflow/vue';
+import { useVueFlow } from 'xyflow-vue';
 
 const flow = useVueFlow();
 let tick = 0;

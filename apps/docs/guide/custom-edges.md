@@ -6,7 +6,7 @@ An edge component receives source/target coords and renders an SVG path. Use `<B
 <!-- DashedEdge.vue -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import { BaseEdge, getBezierPath, Position } from '@xyflow/vue';
+import { BaseEdge, getBezierPath, Position } from 'xyflow-vue';
 
 const props = defineProps<{
   id: string;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, NodeToolbar, Position, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, NodeToolbar, Position, type Node, type Edge } from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: '1', data: { label: 'Select me' }, position: { x: 200, y: 150 } },

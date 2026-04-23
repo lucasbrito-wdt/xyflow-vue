@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: '@xyflow/vue',
+  title: 'xyflow-vue',
   description: 'Vue 3 port of xyflow — node-based editors, flow charts, diagrams',
   themeConfig: {
     nav: [

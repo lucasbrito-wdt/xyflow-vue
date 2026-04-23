@@ -9,13 +9,13 @@
 
 ::: code-group
 ```bash [pnpm]
-pnpm add @xyflow/vue
+pnpm add xyflow-vue
 ```
 ```bash [npm]
-npm install @xyflow/vue
+npm install xyflow-vue
 ```
 ```bash [yarn]
-yarn add @xyflow/vue
+yarn add xyflow-vue
 ```
 :::
 
@@ -26,8 +26,8 @@ yarn add @xyflow/vue
 import { createApp } from 'vue';
 import App from './App.vue';
 
-import '@xyflow/vue/dist/style.css'; // default theme
-// or '@xyflow/vue/dist/base.css' for unstyled
+import 'xyflow-vue/dist/style.css'; // default theme
+// or 'xyflow-vue/dist/base.css' for unstyled
 
 createApp(App).mount('#app');
 ```
@@ -37,7 +37,7 @@ createApp(App).mount('#app');
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, type Node, type Edge } from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: '1', type: 'input', data: { label: 'Input' }, position: { x: 250, y: 25 } },

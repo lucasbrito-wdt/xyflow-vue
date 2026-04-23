@@ -14,8 +14,8 @@ Vue Flow is **SSR-safe** in terms of no crashes — all `window`/`document`/`Res
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, type Node, type Edge } from '@xyflow/vue';
-import '@xyflow/vue/dist/style.css';
+import { VueFlow, type Node, type Edge } from 'xyflow-vue';
+import 'xyflow-vue/dist/style.css';
 
 const nodes = ref<Node[]>([...]);
 const edges = ref<Edge[]>([...]);
@@ -30,7 +30,7 @@ Exclude from SSR bundling if you hit any build issues:
 // nuxt.config.ts
 export default defineNuxtConfig({
   build: {
-    transpile: ['@xyflow/vue', '@xyflow/system'],
+    transpile: ['xyflow-vue', '@xyflow/system'],
   },
   ssr: true,
 });

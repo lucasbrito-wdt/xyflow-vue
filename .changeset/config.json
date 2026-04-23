@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@xyflow/vue-docs", "vue-examples"]
+  "ignore": ["xyflow-vue-docs", "vue-examples"]
 }

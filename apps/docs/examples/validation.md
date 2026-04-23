@@ -5,7 +5,7 @@ Gate new connections with `isValidConnection`. The function receives a `Connecti
 <ExampleFrame slug="validation" />
 
 ```ts
-import { type Connection } from '@xyflow/vue';
+import { type Connection } from 'xyflow-vue';
 
 // Only allow A → B
 const isValidConnection = (c: Connection) => c.source === 'a' && c.target === 'b';

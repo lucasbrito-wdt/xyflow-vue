@@ -26,12 +26,12 @@ importers:
 
   examples/vue:
     dependencies:
-      '@xyflow/vue':
-        specifier: workspace:*
-        version: link:../../packages/vue
       vue:
         specifier: ^3.5.12
         version: 3.5.33(typescript@5.9.3)
+      xyflow-vue:
+        specifier: workspace:*
+        version: link:../../packages/vue
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.1.4

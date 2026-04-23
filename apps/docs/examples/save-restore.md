@@ -6,7 +6,7 @@ Snapshot the current graph state (`nodes + edges + viewport`) into localStorage 
 
 ```vue
 <script setup lang="ts">
-import { useVueFlow } from '@xyflow/vue';
+import { useVueFlow } from 'xyflow-vue';
 const flow = useVueFlow();
 
 function save() {

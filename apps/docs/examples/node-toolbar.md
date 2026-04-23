@@ -6,7 +6,7 @@ A floating toolbar positioned above the selected node. Uses `<Teleport>` under t
 
 ```vue
 <script setup lang="ts">
-import { VueFlow, Background, NodeToolbar, Position } from '@xyflow/vue';
+import { VueFlow, Background, NodeToolbar, Position } from 'xyflow-vue';
 </script>
 
 <template>

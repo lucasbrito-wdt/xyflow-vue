@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { VueFlow, Background, Controls, Panel, useVueFlow, VueFlowProvider, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, Panel, useVueFlow, VueFlowProvider, type Node, type Edge } from 'xyflow-vue';
 
 const STORAGE_KEY = 'xyflow-vue-demo-save';
 
@@ -19,7 +19,7 @@ const edges = ref<Edge[]>([{ id: 'e', source: '1', target: '2' }]);
 
 <script lang="ts">
 import { defineComponent, h } from 'vue';
-import { VueFlow as _VF, Background as _BG, Controls as _C, Panel as _P, useVueFlow as _uvf } from '@xyflow/vue';
+import { VueFlow as _VF, Background as _BG, Controls as _C, Panel as _P, useVueFlow as _uvf } from 'xyflow-vue';
 
 export const Inner = defineComponent({
   props: ['nodes', 'edges'],

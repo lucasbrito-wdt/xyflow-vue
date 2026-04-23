@@ -8,7 +8,7 @@ Thanks for considering a contribution.
 git clone https://github.com/lucasbrito-wdt/xyflow-vue
 cd xyflow-vue
 pnpm install
-pnpm build     # build @xyflow/vue once so the example app can resolve it
+pnpm build     # build xyflow-vue once so the example app can resolve it
 pnpm dev       # http://localhost:5173 — 20 interactive demos
 pnpm docs:dev  # http://localhost:5174 — VitePress docs
 ```
@@ -52,7 +52,7 @@ End-to-end tests are planned — we'll port the svelte-flow Playwright fixtures.
 
 Include:
 - Vue version
-- `@xyflow/vue` version
+- `xyflow-vue` version
 - Minimal reproduction (CodeSandbox / StackBlitz / small gist)
 - Expected vs actual behavior
 - Browser + OS (if UI-related)

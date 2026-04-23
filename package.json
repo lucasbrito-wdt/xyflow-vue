@@ -1,16 +1,16 @@
 {
   "name": "xyflow-vue-monorepo",
   "version": "0.0.0",
-  "description": "Unofficial Vue 3 port of xyflow — node-based editors, flow charts, diagrams",
+  "description": "Vue 3 port of xyflow — node-based editors, flow charts, diagrams",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @xyflow/vue build",
-    "typecheck": "pnpm --filter @xyflow/vue typecheck",
-    "lint": "pnpm --filter @xyflow/vue lint",
+    "build": "pnpm --filter xyflow-vue build",
+    "typecheck": "pnpm --filter xyflow-vue typecheck",
+    "lint": "pnpm --filter xyflow-vue lint",
     "dev": "pnpm --filter vue-examples dev",
-    "docs:dev": "pnpm --filter @xyflow/vue-docs dev",
-    "docs:build": "pnpm --filter @xyflow/vue-docs build",
+    "docs:dev": "pnpm --filter xyflow-vue-docs dev",
+    "docs:build": "pnpm --filter xyflow-vue-docs build",
     "release": "changeset publish"
   },
   "keywords": ["vue", "vue-flow", "node-based-ui", "xyflow", "diagram", "workflow"],

@@ -12,6 +12,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@xyflow/vue', '@xyflow/system'],
+    exclude: ['xyflow-vue', '@xyflow/system'],
   },
 });

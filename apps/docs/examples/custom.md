@@ -9,7 +9,7 @@ Build nodes with any Vue template. Register them via `nodeTypes` and wire handle
 ```vue
 <!-- ColorNode.vue -->
 <script setup lang="ts">
-import { Handle, Position, useVueFlow } from '@xyflow/vue';
+import { Handle, Position, useVueFlow } from 'xyflow-vue';
 
 const props = defineProps<{
   id: string;
@@ -45,7 +45,7 @@ function setColor(c: string) {
 ```vue
 <script setup lang="ts">
 import { markRaw } from 'vue';
-import { VueFlow } from '@xyflow/vue';
+import { VueFlow } from 'xyflow-vue';
 import ColorNode from './ColorNode.vue';
 
 const nodeTypes = { color: markRaw(ColorNode) };

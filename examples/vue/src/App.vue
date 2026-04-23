@@ -84,7 +84,7 @@ function find(key: string) {
         overflow-y: auto;
       "
     >
-      <h3 style="margin: 0 0 12px; font-size: 14px">@xyflow/vue demos</h3>
+      <h3 style="margin: 0 0 12px; font-size: 14px">xyflow-vue demos</h3>
       <template v-for="(items, group) in groups" :key="group">
         <div style="font-size: 11px; text-transform: uppercase; color: #888; margin: 12px 0 4px; font-weight: 600">
           {{ group }}

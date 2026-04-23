@@ -1,5 +1,5 @@
 {
-  "name": "@xyflow/vue-docs",
+  "name": "xyflow-vue-docs",
   "version": "0.0.0",
   "private": true,
   "type": "module",

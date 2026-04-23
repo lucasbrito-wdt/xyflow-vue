@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, Controls, Panel, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, Panel, type Node, type Edge } from 'xyflow-vue';
 
 const mode = ref<'light' | 'dark' | 'system'>('dark');
 

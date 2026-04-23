@@ -8,7 +8,7 @@ import {
   Position,
   type Node,
   type Edge,
-} from '@xyflow/vue';
+} from 'xyflow-vue';
 import ColorNode from './ColorNode.vue';
 
 const nodeTypes = { color: markRaw(ColorNode) };

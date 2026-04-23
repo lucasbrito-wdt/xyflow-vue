@@ -1,11 +1,11 @@
 # Delete Middle Node
 
-Remove a node and reconnect its incomers directly to its outgoers, preserving the flow shape. Uses `getIncomers` / `getOutgoers` from `@xyflow/vue`.
+Remove a node and reconnect its incomers directly to its outgoers, preserving the flow shape. Uses `getIncomers` / `getOutgoers` from `xyflow-vue`.
 
 <ExampleFrame slug="deleteMiddle" />
 
 ```ts
-import { getIncomers, getOutgoers } from '@xyflow/vue';
+import { getIncomers, getOutgoers } from 'xyflow-vue';
 
 function deleteMiddle() {
   const middle = nodes.value.find((n) => n.id === 'b');

@@ -11,7 +11,7 @@ export function useStore(): VueFlowStore {
   const store = inject(VueFlowStoreKey, null);
   if (!store) {
     throw new Error(
-      '[@xyflow/vue]: useStore must be used inside <VueFlow> or <VueFlowProvider>.'
+      '[xyflow-vue]: useStore must be used inside <VueFlow> or <VueFlowProvider>.'
     );
   }
   return store;

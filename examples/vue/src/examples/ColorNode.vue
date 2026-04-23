@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Handle, Position, useVueFlow } from '@xyflow/vue';
+import { Handle, Position, useVueFlow } from 'xyflow-vue';
 
 const props = defineProps<{
   id: string;

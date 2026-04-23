@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Handle, Position, useNodeConnections } from '@xyflow/vue';
+import { Handle, Position, useNodeConnections } from 'xyflow-vue';
 
 defineProps<{ id: string; data: { label: string } }>();
 

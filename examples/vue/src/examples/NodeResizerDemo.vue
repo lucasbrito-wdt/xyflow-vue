@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, markRaw } from 'vue';
-import { VueFlow, Background, Controls, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, type Node, type Edge } from 'xyflow-vue';
 import ResizableNode from './ResizableNode.vue';
 
 const nodeTypes = { resizable: markRaw(ResizableNode) };

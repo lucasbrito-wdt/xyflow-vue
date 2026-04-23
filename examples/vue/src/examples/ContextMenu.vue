@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, type Node, type Edge } from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: '1', data: { label: 'Right-click me' }, position: { x: 150, y: 100 } },

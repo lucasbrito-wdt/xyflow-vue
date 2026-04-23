@@ -1,25 +1,36 @@
 {
-  "name": "@xyflow/vue",
+  "name": "xyflow-vue",
   "version": "0.1.0-alpha.0",
-  "description": "Vue Flow - A highly customizable Vue library for building node-based editors, workflow systems, diagrams and more. Official Vue port of xyflow.",
+  "description": "Vue 3 port of xyflow — build node-based editors, flow charts, diagrams and workflow tools. Built on @xyflow/system, the same engine as React Flow and Svelte Flow.",
   "keywords": [
     "vue",
+    "vue3",
     "vue-flow",
-    "node-based UI",
-    "graph",
+    "vueflow",
+    "xyflow",
+    "react-flow",
+    "svelte-flow",
+    "node-based-ui",
+    "node-editor",
+    "flow-chart",
+    "flowchart",
     "diagram",
     "workflow",
-    "xyflow"
+    "graph",
+    "visualization",
+    "whiteboard",
+    "mindmap"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/xyflow/xyflow.git",
+    "url": "git+https://github.com/lucasbrito-wdt/xyflow-vue.git",
     "directory": "packages/vue"
   },
-  "homepage": "https://xyflow.com",
+  "homepage": "https://github.com/lucasbrito-wdt/xyflow-vue#readme",
   "bugs": {
-    "url": "https://github.com/xyflow/xyflow/issues"
+    "url": "https://github.com/lucasbrito-wdt/xyflow-vue/issues"
   },
+  "author": "Lucas Brito <https://github.com/lucasbrito-wdt>",
   "scripts": {
     "dev": "concurrently \"vite build --watch\" pnpm:css-watch",
     "build": "vite build && pnpm css",
@@ -42,12 +53,11 @@
     "./dist/base.css": "./dist/base.css",
     "./dist/style.css": "./dist/style.css"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@xyflow/system": "^0.0.76",
@@ -74,7 +84,5 @@
   "peerDependencies": {
     "vue": "^3.5.0"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }

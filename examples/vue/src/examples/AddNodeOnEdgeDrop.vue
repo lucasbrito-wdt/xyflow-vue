@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { VueFlow, Background, useVueFlow, VueFlowProvider, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, useVueFlow, VueFlowProvider, type Node, type Edge } from 'xyflow-vue';
 
 let id = 1;
 const nodes = ref<Node[]>([
@@ -19,7 +19,7 @@ function InnerFlow() {}
 
 <script lang="ts">
 import { defineComponent, h } from 'vue';
-import { VueFlow as _VF, Background as _BG, useVueFlow as _uvf } from '@xyflow/vue';
+import { VueFlow as _VF, Background as _BG, useVueFlow as _uvf } from 'xyflow-vue';
 
 export const Inner = defineComponent({
   props: ['nodesRef', 'edgesRef'],

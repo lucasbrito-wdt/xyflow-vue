@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Handle, Position, NodeResizer } from '@xyflow/vue';
+import { Handle, Position, NodeResizer } from 'xyflow-vue';
 
 defineProps<{ data: { label: string }; selected?: boolean }>();
 </script>

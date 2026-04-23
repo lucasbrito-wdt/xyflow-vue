@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, shallowRef } from 'vue';
-import { VueFlow, Background, Controls, type Node, type Edge } from '@xyflow/vue';
+import { VueFlow, Background, Controls, type Node, type Edge } from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: '1', data: { label: 'Drag me' }, position: { x: 100, y: 100 } },

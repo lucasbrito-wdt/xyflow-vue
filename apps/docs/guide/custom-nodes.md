@@ -10,7 +10,7 @@ Any Vue component can be a node. You just need:
 ```vue
 <!-- MyNode.vue -->
 <script setup lang="ts">
-import { Handle, Position } from '@xyflow/vue';
+import { Handle, Position } from 'xyflow-vue';
 
 defineProps<{
   id: string;
@@ -51,7 +51,7 @@ const nodeTypes = { myNode: markRaw(MyNode) };
 ## Accessing the store from inside a node
 
 ```ts
-import { useVueFlow, useNodeConnections } from '@xyflow/vue';
+import { useVueFlow, useNodeConnections } from 'xyflow-vue';
 
 const flow = useVueFlow();
 flow.updateNodeData(props.id, { label: 'renamed' });

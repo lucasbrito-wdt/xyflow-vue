@@ -8,7 +8,7 @@ import {
   VueFlowProvider,
   type Node,
   type Edge,
-} from '@xyflow/vue';
+} from 'xyflow-vue';
 
 const nodes = ref<Node[]>([
   { id: 'start', type: 'input', data: { label: 'Start here →' }, position: { x: 50, y: 50 } },
