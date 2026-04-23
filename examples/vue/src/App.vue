@@ -24,6 +24,7 @@ import UndoRedoDemo from './examples/UndoRedoDemo.vue';
 import DagreLayout from './examples/DagreLayout.vue';
 import FloatingEdges from './examples/FloatingEdges.vue';
 import EditableEdgeDemo from './examples/EditableEdgeDemo.vue';
+import ReconnectEdge from './examples/ReconnectEdge.vue';
 
 const groups = {
   Basics: {
@@ -46,6 +47,7 @@ const groups = {
     markers: { label: 'Edge Markers', comp: markRaw(EdgeMarkers) },
     floating: { label: 'Floating Edges', comp: markRaw(FloatingEdges) },
     editable: { label: 'Editable Edge', comp: markRaw(EditableEdgeDemo) },
+    reconnect: { label: 'Reconnect Edge', comp: markRaw(ReconnectEdge) },
   },
   Interaction: {
     validation: { label: 'Validation', comp: markRaw(Validation) },

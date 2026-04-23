@@ -70,6 +70,7 @@ export default defineConfig({
             { text: 'Edge Markers', link: '/examples/edge-markers' },
             { text: 'Floating Edges', link: '/examples/floating-edges' },
             { text: 'Editable Edge', link: '/examples/editable-edge' },
+            { text: 'Reconnect Edge', link: '/examples/reconnect-edge' },
           ],
         },
         {
