@@ -6,6 +6,7 @@ import BezierEdge from '../edges/BezierEdge.vue';
 import StraightEdge from '../edges/StraightEdge.vue';
 import SmoothStepEdge from '../edges/SmoothStepEdge.vue';
 import StepEdge from '../edges/StepEdge.vue';
+import EdgeReconnectAnchor from '../EdgeReconnectAnchor/EdgeReconnectAnchor.vue';
 
 const props = defineProps<{
   edge: any;
@@ -30,6 +31,9 @@ const EdgeComponent = computed(() => {
   const type = props.edge.type ?? 'default';
   return store.edgeTypes.value[type] ?? builtIn[type] ?? BezierEdge;
 });
+
+// Show reconnect anchors when edge is selected AND reconnectable !== false
+const showReconnect = computed(() => !!props.edge.selected && props.edge.reconnectable !== false);
 </script>
 
 <template>
@@ -62,6 +66,20 @@ const EdgeComponent = computed(() => {
       :marker-start="edge.markerStart"
       :marker-end="edge.markerEnd"
       :interaction-width="edge.interactionWidth"
+    />
+    <EdgeReconnectAnchor
+      v-if="showReconnect"
+      type="source"
+      :edge-id="edge.id"
+      :x="sourceX"
+      :y="sourceY"
+    />
+    <EdgeReconnectAnchor
+      v-if="showReconnect"
+      type="target"
+      :edge-id="edge.id"
+      :x="targetX"
+      :y="targetY"
     />
   </g>
 </template>

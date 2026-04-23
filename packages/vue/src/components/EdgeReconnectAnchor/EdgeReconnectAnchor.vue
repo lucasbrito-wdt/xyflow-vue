@@ -2,12 +2,19 @@
 import { XYHandle, type HandleType } from '@xyflow/system';
 import { useStore } from '../../store/context';
 
-const props = defineProps<{
-  x: number;
-  y: number;
-  type: HandleType;
-  edgeId: string;
-  radius?: number;
+const props = withDefaults(
+  defineProps<{
+    x: number;
+    y: number;
+    type: HandleType;
+    edgeId: string;
+    radius?: number;
+  }>(),
+  { radius: 8 }
+);
+
+const emit = defineEmits<{
+  (e: 'reconnect', edgeId: string, newSource: string, newTarget: string): void;
 }>();
 
 const store = useStore() as any;
@@ -16,18 +23,20 @@ function onPointerDown(event: MouseEvent | TouchEvent) {
   const edge = store.edgeLookup.get(props.edgeId);
   if (!edge) return;
 
-  // the "fixed" end stays connected; we drag the opposite end
+  // The "fixed" end (opposite of the one the user grabbed) stays anchored;
+  // XYHandle drags from there and fires onConnect when a new target is reached.
   const isTarget = props.type === 'target';
   const fixedNodeId = isTarget ? edge.source : edge.target;
   const fixedHandleId = isTarget ? edge.sourceHandle ?? null : edge.targetHandle ?? null;
-  const fixedType: HandleType = isTarget ? 'source' : 'target';
+  const fixedIsTarget = !isTarget;
 
   const v = store.viewport.value;
 
   XYHandle.onPointerDown(event, {
     handleId: fixedHandleId,
     nodeId: fixedNodeId,
-    isTarget: fixedType === 'target',
+    isTarget: fixedIsTarget,
+    edgeUpdaterType: props.type,
     connectionRadius: 20,
     domNode: store.domNode.value,
     nodeLookup: store.nodeLookup,
@@ -41,7 +50,6 @@ function onPointerDown(event: MouseEvent | TouchEvent) {
     cancelConnection: store.cancelConnection,
     panBy: store.panBy,
     onConnect: (connection: any) => {
-      // reconnect the existing edge instead of creating a new one
       const next = (store.edges.value as any[]).map((e) =>
         e.id === props.edgeId
           ? {
@@ -54,13 +62,15 @@ function onPointerDown(event: MouseEvent | TouchEvent) {
           : e
       );
       store.setEdges(next);
+      emit('reconnect', props.edgeId, connection.source, connection.target);
     },
-    onConnectStart: store.onConnectStart.value,
-    onConnectEnd: (...args: any[]) => store.onConnectEnd.value?.(...args),
+    onConnectStart: undefined,
+    onConnectEnd: undefined,
+    onReconnectEnd: undefined,
     getTransform: () => [v.x, v.y, v.zoom],
     getFromHandle: () => store.connection.value.fromHandle,
     dragThreshold: 1,
-    handleDomNode: event.currentTarget as HTMLElement,
+    handleDomNode: event.currentTarget as unknown as HTMLElement,
   } as any);
 }
 </script>
@@ -70,8 +80,11 @@ function onPointerDown(event: MouseEvent | TouchEvent) {
     class="vue-flow__edge-reconnect-anchor"
     :cx="x"
     :cy="y"
-    :r="radius ?? 8"
-    fill="transparent"
+    :r="radius"
+    fill="white"
+    stroke="#3578e5"
+    stroke-width="2"
+    style="cursor: crosshair; pointer-events: all"
     :data-edgeid="edgeId"
     :data-handletype="type"
     @mousedown="onPointerDown"

@@ -11,7 +11,8 @@
     "dev": "pnpm --filter vue-examples dev",
     "docs:dev": "pnpm --filter xyflow-vue-docs dev",
     "docs:build": "pnpm --filter xyflow-vue-docs build",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "audit:bundle": "node scripts/bundle-audit.mjs"
   },
   "keywords": ["vue", "vue-flow", "node-based-ui", "xyflow", "diagram", "workflow"],
   "license": "MIT",

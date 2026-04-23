@@ -1,0 +1,48 @@
+{
+  "name": "xyflow-vue-nuxt",
+  "version": "0.1.0-alpha.0",
+  "description": "Nuxt 3/4 module for xyflow-vue — auto-imports components/composables, SSR-safe <ClientOnly> helpers.",
+  "keywords": ["nuxt", "nuxt-module", "vue", "xyflow", "flow-chart", "node-based-ui"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasbrito-wdt/xyflow-vue.git",
+    "directory": "packages/nuxt"
+  },
+  "homepage": "https://github.com/lucasbrito-wdt/xyflow-vue/tree/main/packages/nuxt#readme",
+  "bugs": "https://github.com/lucasbrito-wdt/xyflow-vue/issues",
+  "author": "Lucas Brito <https://github.com/lucasbrito-wdt>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "build": "nuxt-module-build build",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.14.0",
+    "xyflow-vue": "workspace:*"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.0.0 || ^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/schema": "^3.14.0",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
