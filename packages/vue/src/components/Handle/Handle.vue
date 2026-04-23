@@ -128,7 +128,7 @@ const classes = computed(() => [
 <template>
   <div
     :class="classes"
-    :data-handleid="id ?? ''"
+    :data-handleid="id ?? null"
     :data-nodeid="nodeId"
     :data-handlepos="position"
     :data-handletype="type"
