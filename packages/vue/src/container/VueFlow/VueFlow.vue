@@ -164,6 +164,28 @@ watch([() => store.nodes.value, () => store.edges.value], () => {
 watch(() => props.nodes, (n) => { if (n) store.setNodes(n); });
 watch(() => props.edges, (e) => { if (e) store.setEdges(e); });
 
+/**
+ * Sync <VueFlow> props into the store. This is critical when the store comes
+ * from a <VueFlowProvider> ancestor: without these watchers, props like
+ * `nodeTypes` / `edgeTypes` passed to <VueFlow> would be silently dropped,
+ * and the NodeWrapper/EdgeWrapper would fall back to `DefaultNode`/`BezierEdge`
+ * (visually: custom nodes render as "only the two handles").
+ *
+ * `immediate: true` ensures the store reflects the latest props on the first
+ * render, matching `@xyflow/react`'s `StoreUpdater` semantics where the root
+ * component's props win over any pre-seeded provider state.
+ */
+watch(
+  () => props.nodeTypes,
+  (v) => { if (v) store.nodeTypes.value = v; },
+  { immediate: true }
+);
+watch(
+  () => props.edgeTypes,
+  (v) => { if (v) store.edgeTypes.value = v; },
+  { immediate: true }
+);
+
 const rootEl = ref<HTMLDivElement | null>(null);
 useResizeObserver(rootEl, store as any);
 const colorModeClass = useColorMode(props.colorMode, store as any);

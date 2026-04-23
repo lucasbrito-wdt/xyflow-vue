@@ -1,6 +1,6 @@
 {
   "name": "xyflow-vue",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Vue 3 port of xyflow — build node-based editors, flow charts, diagrams and workflow tools. Built on @xyflow/system, the same engine as React Flow and Svelte Flow.",
   "keywords": [
     "vue",

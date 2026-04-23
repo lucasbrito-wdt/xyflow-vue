@@ -6,6 +6,15 @@ All notable changes to this project will be documented here. Format based on [Ke
 
 Initial public release of the unofficial Vue 3 port.
 
+### Fixed
+- `<VueFlow>` now reactively syncs `nodeTypes` and `edgeTypes` props into the
+  store with `immediate: true`. Previously, when `<VueFlow>` reused a store
+  provided by a `<VueFlowProvider>` ancestor (or when these props arrived
+  asynchronously), custom node/edge components were silently replaced by the
+  built-in `DefaultNode` / `BezierEdge` fallbacks — visually rendering only
+  the source/target handles with an empty body. This matches the
+  `StoreUpdater` semantics in `@xyflow/react`.
+
 ### Added
 - Core renderer: `<VueFlow>` with controlled/uncontrolled modes, TS generics
 - Built-in nodes: `input`, `output`, `default`, `group`
