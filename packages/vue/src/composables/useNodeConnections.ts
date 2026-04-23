@@ -2,6 +2,14 @@ import { computed, inject } from 'vue';
 import type { HandleType, NodeConnection } from '@xyflow/system';
 import { useStore } from '../store/context';
 
+/**
+ * Reactive list of connections on a node (optionally filtered by handle).
+ *
+ * Matches `@xyflow/system`'s connectionLookup keying:
+ *  - `nodeId` → all connections on the node
+ *  - `nodeId-{source|target}` → connections on one handle type
+ *  - `nodeId-{source|target}-{handleId}` → connections on a specific handle
+ */
 export function useNodeConnections(params?: {
   id?: string;
   handleType?: HandleType;
@@ -12,17 +20,16 @@ export function useNodeConnections(params?: {
   const nodeId = params?.id ?? ctxNodeId;
 
   return computed<NodeConnection[]>(() => {
-    // depend on edges to retrigger when lookup changes
     void store.edges.value;
-    const result: NodeConnection[] = [];
-    const prefix = params?.handleType ? `${nodeId}-${params.handleType}` : null;
+    if (!nodeId) return [];
 
-    for (const [key, connMap] of store.connectionLookup as Map<string, Map<string, NodeConnection>>) {
-      if (!key.startsWith(nodeId)) continue;
-      if (prefix && !key.startsWith(prefix)) continue;
-      if (params?.handleId && !key.endsWith(`-${params.handleId}`)) continue;
-      for (const conn of connMap.values()) result.push(conn);
-    }
-    return result;
+    const key = params?.handleType
+      ? params.handleId
+        ? `${nodeId}-${params.handleType}-${params.handleId}`
+        : `${nodeId}-${params.handleType}`
+      : nodeId;
+
+    const map = (store.connectionLookup as Map<string, Map<string, NodeConnection>>).get(key);
+    return map ? Array.from(map.values()) : [];
   });
 }
