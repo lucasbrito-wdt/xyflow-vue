@@ -85,9 +85,16 @@ export function useUndoRedo<
 
   const apply = (snap: Snapshot<NodeType, EdgeType>) => {
     applying = true;
-    store.setNodes(snap.nodes);
-    store.setEdges(snap.edges);
-    queueMicrotask(() => (applying = false));
+    // cancel any pending debounced snapshot that was queued just before apply()
+    if (timer) { clearTimeout(timer); timer = null; }
+    try {
+      store.setNodes(snap.nodes);
+      store.setEdges(snap.edges);
+    } finally {
+      // with flush: 'sync' on the watcher, it has already run synchronously
+      // inside setNodes/setEdges — safe to release the guard here
+      applying = false;
+    }
   };
 
   const undo = () => {
@@ -112,11 +119,12 @@ export function useUndoRedo<
     refreshFlags();
   };
 
-  // Track changes
+  // flush: 'sync' — runs synchronously when nodes/edges shallowRef is reassigned,
+  // so the `applying` guard in apply() is still truthy and snapshots are skipped.
   watch(
     [() => store.nodes.value, () => store.edges.value],
     () => queueSnapshot(),
-    { deep: false }
+    { deep: false, flush: 'sync' }
   );
 
   // Keyboard shortcuts
