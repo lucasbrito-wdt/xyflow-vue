@@ -11,7 +11,7 @@ import type {
   Viewport as ViewportState,
 } from '@xyflow/system';
 import { createStore } from '../../store';
-import { provideStore } from '../../store/context';
+import { provideStore, useStoreSafe } from '../../store/context';
 import { useResizeObserver } from '../../composables/useResizeObserver';
 import { useColorMode } from '../../composables/useColorMode';
 import Viewport from '../../components/Viewport/Viewport.vue';
@@ -72,8 +72,11 @@ const emit = defineEmits<{
   (e: 'error', code: string, message: string): void;
 }>();
 
-const store = createStore<NodeType, EdgeType>(props);
-provideStore(store as any);
+// Reuse store from <VueFlowProvider> ancestor if present — lets siblings of
+// <VueFlow> (e.g. custom panels, undo/redo panel) share the same graph state.
+const existing = useStoreSafe();
+const store = (existing ?? createStore<NodeType, EdgeType>(props)) as any;
+if (!existing) provideStore(store);
 
 // wire connection emits
 store.onConnect.value = (c) => emit('connect', c);
